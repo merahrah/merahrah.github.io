@@ -1,46 +1,185 @@
-<body style="background-color:rgb(21, 28, 26);">
-
-<p  style="font-size:40px; font-family: 'Trebuchet MS', sans-serif; color: rgb(122, 160, 140);text-align: left;">ISABEL CUENCA</p>
-<p  style="font: size 20px; font-family: 'Trebuchet MS', sans-serif; color: rgb(122, 160, 140);text-align: left;"><b><u>Paintings____________</u></b></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Isabel Cuenca</title>
 
 <style>
-img {
-  padding: 5px;
-  height: 30%;
-}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
+    body {
+        font-family: 'Trebuchet MS', sans-serif;
+        background: #b2c4c5;
+        color: #333;
+        line-height: 1.6;
+    }
 
-img:hover {
-  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
-}
+    header {
+        text-align: center;
+        padding: 40px 20px;
+        background: #394445;
+        color: rgb(114, 180, 163);
+    }
+
+    header h1 {
+        font-size: 3rem;
+        margin-bottom: 10px;
+    }
+
+    header p {
+        font-size: 1.1rem;
+        color: #ddd;
+    }
+
+    section {
+        max-width: 1200px;
+        margin: 50px auto;
+        padding: 0 20px;
+    }
+
+    section h2 {
+        margin-bottom: 20px;
+        font-size: 2rem;
+        border-bottom: 3px solid #333;
+        display: inline-block;
+        padding-bottom: 5px;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 15px;
+    }
+
+    .gallery img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+        transform: scale(1.05);
+    }
+
+    /* Lightbox */
+    .lightbox {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.9);
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .lightbox img {
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 10px;
+    }
+
+    .close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: white;
+        font-size: 40px;
+        cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+        header h1 {
+            font-size: 2rem;
+        }
+
+        section h2 {
+            font-size: 1.5rem;
+        }
+    }
 </style>
+</head>
 <body>
-<a target="_blank" href="image/ICP01.jpg">
-  <img src="image/ICP01.jpg"></a>
-<a target="_blank" href="image/ICP02.jpg">
-  <img src="image/ICP02.jpg"></a>
-<a target="_blank" href="image/ICP03.jpg">
-  <img src="image/ICP03.jpg"></a>
-<a target="_blank" href="image/ICP04.jpg">
-  <img src="image/ICP04.jpg"></a>
-<a target="_blank" href="image/ICP05.jpg">
-  <img src="image/ICP05.jpg"></a>
-<a target="_blank" href="image/ICP06.jpg">
-  <img src="image/ICP06.jpg"></a>
-<a target="_blank" href="image/ICP07.jpg">
-  <img src="image/ICP07.jpg"></a>
-<a target="_blank" href="image/ICP08.jpg">
-  <img src="image/ICP08.jpg"></a>
-<a target="_blank" href="image/ICP09.jpg">
-  <img src="image/ICP09.jpg"></a>
-</body> </a>
 
-<p  style="font: size 20px; font-family: 'Trebuchet MS', sans-serif; color: rgb(122, 160, 140);text-align: left;"><b><u>Installations____________</u></b></p>
-<a target="_blank" href="image/ICI01.jpg">
-  <img src="image/ICI01.jpg"></a>'
-<a target="_blank" href="image/ICI02.jpg">
-  <img src="image/ICI02.jpg"></a>
-  <a target="_blank" href="image/ICI03.jpg">
-  <img src="image/ICI03.jpg"></a>'
+<header>
+    <h1>Isabel Cuenca</h1>
+    <p>Paintings • Installations • Ceramics</p>
+</header>
+
+<!-- Paintings -->
+<section>
+    <h2>Paintings</h2>
+
+    <div class="gallery">
+        <img src="image/ICP01.jpg" alt="Painting 1" onclick="openLightbox(this.src)">
+        <img src="image/ICP02.jpg" alt="Painting 2" onclick="openLightbox(this.src)">
+        <img src="image/ICP03.jpg" alt="Painting 3" onclick="openLightbox(this.src)">
+        <img src="image/ICP04.jpg" alt="Painting 4" onclick="openLightbox(this.src)">
+        <img src="image/ICP05.jpg" alt="Painting 5" onclick="openLightbox(this.src)">
+        <img src="image/ICP06.jpg" alt="Painting 6" onclick="openLightbox(this.src)">
+        <img src="image/ICP07.jpg" alt="Painting 7" onclick="openLightbox(this.src)">
+        <img src="image/ICP08.jpg" alt="Painting 8" onclick="openLightbox(this.src)">
+        <img src="image/ICP09.jpg" alt="Painting 9" onclick="openLightbox(this.src)">
+    </div>
+</section>
+
+<!-- Installations -->
+<section>
+    <h2>Installations</h2>
+
+    <div class="gallery">
+        <img src="/image/ICI01.jpg" alt="Installation 1" onclick="openLightbox(this.src)">
+        <img src="/image/ICI02.jpg" alt="Installation 2" onclick="openLightbox(this.src)">
+        <img src="/image/ICI03.jpg" alt="Installation 3" onclick="openLightbox(this.src)">
+    </div>
+</section>
+
+<!-- Ceramics -->
+<section>
+    <h2>Ceramics</h2>
+
+    <div class="gallery">
+        <img src="https://picsum.photos/id/1095/600/400" alt="Ceramic 1" onclick="openLightbox(this.src)">
+        <img src="https://picsum.photos/id/1105/600/400" alt="Ceramic 2" onclick="openLightbox(this.src)">
+        <img src="https://picsum.photos/id/1115/600/400" alt="Ceramic 3" onclick="openLightbox(this.src)">
+        <img src="https://picsum.photos/id/1125/600/400" alt="Ceramic 4" onclick="openLightbox(this.src)">
+    </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+function openLightbox(src) {
+    document.getElementById("lightbox").style.display = "flex";
+    document.getElementById("lightbox-img").src = src;
+}
+
+function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+}
+
+// Close when clicking outside image
+document.getElementById("lightbox").addEventListener("click", function(e) {
+    if (e.target === this) {
+        closeLightbox();
+    }
+});
+</script>
+<p style="font-size:15px; font-family: 'Trebuchet MS', sans-serif; color: rgb(152, 154, 156);text-align: center;"><i>Copyright Isabel Cuenca 2026</i></p>
 </body>
-<p style="font-size:15px; font-family: 'Trebuchet MS', sans-serif; color: rgb(152, 154, 156);text-align: center;"><i>Copyright Isabel Cuenca 2026</i></p
+</html>
